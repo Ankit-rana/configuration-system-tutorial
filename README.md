@@ -10,4 +10,4 @@
 | CFENGINE | https://docs.cfengine.com/docs/3.12/               | [cfengine]()                                                                                         |
 | Chef     | https://docs.chef.io/                              | [chef]()                                                                                             |
 
-![Architecture](https://images.app.goo.gl/wz1spzinHEuoE6Az8)
+![Architecture](http://blog.kwnetapps.com/wp-content/uploads/2017/11/cm-architecture.png)
