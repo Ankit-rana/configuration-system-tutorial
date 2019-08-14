@@ -1,5 +1,3 @@
-# puppet-tutorial 
-
 # Configuration Management System (CMS)
 1. Separate configuration from actual code
 2. Enforce desired configuration on hundred’s of system at once.
