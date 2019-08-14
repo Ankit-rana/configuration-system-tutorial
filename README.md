@@ -41,5 +41,23 @@
         3. sudo puppet cert list --all # check for signed certs
 6. Starting point is /etc/puppet/manifests/site.pp
 7. On Restart, certificate gets regenerated
-    1. https://puppet.com/docs/puppet/5.5/ssl_regenerate_certificates.html
-    2. https://shapeshed.com/connecting-clients-to-a-puppet-master/
+    1. Stop the Puppet agent service. On *nix nodes, run 
+                           sudo puppet resource service puppet ensure=stopped. 
+    2. Locate Puppet’s SSL directory and delete everything in it.
+    The SSL directory should be at /etc/puppetlabs/puppet/ssl or C:\ProgramData\PuppetLabs\puppet\etc\ssl.
+
+    3. Re-start the Puppet agent service. On *nix nodes, run 
+    ```
+                           sudo puppet resource service puppet ensure=running.
+    ```
+    4. Once the Puppet agent starts, it will automatically generate keys and request a new certificate from the CA Puppet   master.
+    5. If you are not using autosigning, you will need to sign each agent node’s certificate request. You can do this by        logging into the CA Puppet master server, running 
+    ```
+                           sudo puppet cert list 
+    ```
+    to see pending requests, and run 
+    ```
+                           sudo puppet cert sign <NAME> 
+    ```
+    to sign requests.
+
