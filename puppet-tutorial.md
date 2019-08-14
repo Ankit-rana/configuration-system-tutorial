@@ -33,7 +33,7 @@
         2. sudo puppet cert sign --all # sign the agent node certs
         3. sudo puppet cert list --all # check for signed certs
 6. Starting point is /etc/puppet/manifests/site.pp
-7. On Restart, certificate gets regenerated
+7. Suppose certificate gets regenerated
     1. Stop the Puppet agent service. On *nix nodes, run 
     ```
                            sudo puppet resource service puppet ensure=stopped. 
