@@ -42,7 +42,9 @@
 6. Starting point is /etc/puppet/manifests/site.pp
 7. On Restart, certificate gets regenerated
     1. Stop the Puppet agent service. On *nix nodes, run 
+    ```
                            sudo puppet resource service puppet ensure=stopped. 
+    ```
     2. Locate Puppet’s SSL directory and delete everything in it.
     The SSL directory should be at /etc/puppetlabs/puppet/ssl or C:\ProgramData\PuppetLabs\puppet\etc\ssl.
 
